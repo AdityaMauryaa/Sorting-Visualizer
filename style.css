@@ -1,0 +1,187 @@
+/* Global Styles */
+body {
+    background: linear-gradient(to left, rgb(0, 140, 255), rgb(172, 209, 219));
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: #ffffff;
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+}
+
+/* Dark Overlay for Better Visibility */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(10, 25, 47, 0.7);
+    backdrop-filter: blur(5px);
+    z-index: -1;
+}
+
+/* Title */
+h1 {
+    font-size: 2rem;
+    text-align: center;
+    color: #00e6e6;
+    text-shadow: 0px 0px 10px rgba(0, 230, 230, 0.8);
+    margin-bottom: 20px;
+}
+
+/* Sorting Container */
+#sorting-container {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    height: 60vh;
+    width: 80vw;
+    border-radius: 10px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(5px);
+    box-shadow: 0px 0px 15px rgba(0, 255, 255, 0.2);
+    overflow: hidden;
+    position: relative;
+}
+
+/* Sorting Bars with Neon Glow */
+.column {
+    width: 10px;
+    margin: 1px;
+    background: linear-gradient(to top, #0072ff, #00e6e6);
+    border-radius: 5px;
+    /* transition: transform 0.2s ease-in-out, background 0.3s, box-shadow 0.3s; */
+    box-shadow: 0px 0px 12px rgba(0, 255, 255, 0.6);
+}
+
+/* Pulsating Glow Effect During Sorting */
+@keyframes glow {
+    0% { box-shadow: 0px 0px 12px rgba(0, 255, 255, 0.6); }
+    50% { box-shadow: 0px 0px 18px rgba(0, 230, 230, 1); }
+    100% { box-shadow: 0px 0px 12px rgba(0, 255, 255, 0.6); }
+}
+
+.sorting {
+    animation: glow 1s infinite alternate;
+}
+
+/* Hover Effect: Increases Glow */
+.column:hover {
+    transform: scale(1.1);
+    background: linear-gradient(to top, #00e6e6, #0072ff);
+    box-shadow: 0px 0px 18px rgba(0, 230, 230, 1);
+}
+
+/* Controls Section */
+.controls {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+/* Buttons */
+button {
+    background: linear-gradient(to right, #00c6ff, #0072ff);
+    border: none;
+    color: white;
+    font-size: 1rem;
+    padding: 10px 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0px 0px 8px rgba(0, 255, 255, 0.4);
+}
+
+button:hover {
+    background: linear-gradient(to right, #0072ff, #00e6e6);
+    box-shadow: 0px 0px 12px rgba(0, 255, 255, 0.8);
+    transform: scale(1.05);
+}
+
+/* Dropdown (Algorithm Selection) */
+#algorithmSelect {
+    background: rgba(255, 255, 255, 0.1);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    color: #00e6e6;
+    font-size: 1rem;
+    padding: 8px 12px;
+    border-radius: 8px;
+    outline: none;
+    cursor: pointer;
+    backdrop-filter: blur(8px);
+    transition: all 0.3s ease;
+}
+
+#algorithmSelect:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+/* Sorting Speed Slider */
+#speedSlider {
+    -webkit-appearance: none;
+    width: 200px;
+    height: 6px;
+    background: linear-gradient(to right, #00c6ff, #0072ff);
+    border-radius: 5px;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+#speedSlider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 15px;
+    height: 15px;
+    background: #00e6e6;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0px 0px 8px rgba(0, 230, 230, 0.8);
+}
+
+/* Algorithm Selection Box */
+#sortType {
+    border: 2px solid #0072ff;
+    border-radius: 5px;
+    color: #ffffff;
+    background: linear-gradient(to right, #00c6ff, #0072ff);
+    padding: 8px 12px;
+    outline: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+#sortType:hover {
+    background: linear-gradient(to right, #0072ff, #00e6e6);
+}
+
+/* Reset Message*/
+#resetMessage {
+    display: none;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #00e6e6;
+    text-shadow: 0px 0px 12px rgba(0, 230, 230, 0.8);
+    margin-bottom: 15px;
+    padding: 10px;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(5px);
+    box-shadow: 0px 0px 10px rgba(0, 255, 255, 0.2);
+    text-align: center;
+}
+
+/* Footer */
+footer {
+    margin-top: 20px;
+    color: #00e6e6;
+    font-size: 0.9rem;
+    text-align: center;
+    text-shadow: 0px 0px 5px rgba(0, 230, 230, 0.5);
+}
